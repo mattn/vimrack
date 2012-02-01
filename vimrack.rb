@@ -5,6 +5,8 @@ require 'json/pure'
 
 include Rack
 
+Encoding.default_external = Encoding.find('UTF-8')
+
 class VimRack
   def call(env)
     str = JSON.generate({
